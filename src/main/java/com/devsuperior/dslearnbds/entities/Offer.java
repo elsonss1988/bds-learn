@@ -1,0 +1,80 @@
+package com.devsuperior.dslearnbds.entities;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name="tb_offer")
+public class Offer implements Serializable {
+    public static final long SerialVersionUID=1l;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String edition;
+    private Instant startMoment;
+    private Instant endMoment;
+
+    public Offer(){}
+
+    public Offer(Long id, String edition, Instant startMoment, Instant endMoment) {
+        this.id = id;
+        this.edition = edition;
+        this.startMoment = startMoment;
+        this.endMoment = endMoment;
+    }
+
+    @ManyToOne
+    @JoinColumn(name="course_id")
+    private Course course;
+
+    @OneToMany(mappedBy = "offer")
+    private List<Resource> rsources = new ArrayList<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEdition() {
+        return edition;
+    }
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    public Instant getStartMoment() {
+        return startMoment;
+    }
+
+    public void setStartMoment(Instant startMoment) {
+        this.startMoment = startMoment;
+    }
+
+    public Instant getEndMoment() {
+        return endMoment;
+    }
+
+    public void setEndMoment(Instant endMoment) {
+        this.endMoment = endMoment;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public List<Resource> getRsources() {
+        return rsources;
+    }
+}
