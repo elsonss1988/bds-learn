@@ -87,6 +87,15 @@ public class User implements UserDetails, Serializable {
 		return notifications;
 	}
 
+	public boolean hasHole(String roleName){
+		for (Role role: roles){
+			if(role.getAuthority().equals(roleName)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
