@@ -25,3 +25,21 @@
   INSERT INTO tb_section(title,description, position, img_Uri, resource_id, prerequisite_id) values('Capitulo 1','Neste Capitulo  vamos começar',1,'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRyCxq8BenE16h5QaKuFOSiKNAy78nzcTokscIDWMLkKWe30iOi',1,null);
   INSERT INTO tb_section(title,description, position, img_Uri, resource_id, prerequisite_id) values('Capitulo 2','Neste Capitulo  vamos continuar',2,'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRyCxq8BenE16h5QaKuFOSiKNAy78nzcTokscIDWMLkKWe30iOi',1,null);
   INSERT INTO tb_section(title,description, position, img_Uri, resource_id, prerequisite_id) values('Capitulo 3','Neste Capitulo  vamos finalizar',3,'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRyCxq8BenE16h5QaKuFOSiKNAy78nzcTokscIDWMLkKWe30iOi',1,null);
+
+  INSERT INTO tb_enrollment(user_id,offer_id,enroll_Moment, refund_Moment,avaliable, only_Update) values(1,1,TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z',null,true,false);
+  INSERT INTO tb_enrollment(user_id,offer_id,enroll_Moment, refund_Moment,avaliable, only_Update) values(2,1,TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z',null,true,false);
+
+  INSERT INTO tb_lesson(title, position, section_id) VALUES('Aula 1 do Capitulo 1',1,1);
+  INSERT INTO tb_content(id,text_Content,video_Uri) VALUES(1,'Material de apoio: abc', 'https://www.youtube.com/watch?v=sqbqoR-lMf8');
+
+  INSERT INTO tb_lesson(title, position, section_id) VALUES('Aula 2 do Capitulo 1',2,1);
+  INSERT INTO tb_content(id,text_Content,video_Uri) VALUES(2,'', 'https://www.youtube.com/watch?v=sqbqoR-lMf8') ;
+
+  INSERT INTO tb_lesson(title, position, section_id) VALUES('Aula 3 do Capitulo 1',3,1);
+  INSERT INTO tb_content(id,text_Content,video_Uri) VALUES(3,'', 'https://www.youtube.com/watch?v=sqbqoR-lMf8');
+
+  INSERT INTO tb_lesson(title, position, section_id) VALUES('Tarefa do Capitulo 1',4,1);
+  INSERT INTO tb_task(id,description,question_Count, approval_Count, weight, due_Date) VALUES(4,'Fazer trabalho legal',5,4,1.0,TIMESTAMP WITH TIME ZONE '2020-07-25T20:50:07.12345Z');
+
+  INSERT INTO tb_lessons_done(lesson_id,user_id,offer_id) VALUES (1,1,1);
+  INSERT INTO tb_lessons_done(lesson_id,user_id,offer_id) VALUES (2,1,1);

@@ -6,7 +6,7 @@ import java.io.Serializable;
 @Entity
 @Table(name="tb_section")
 public class Section implements Serializable {
-    public static final long SerialVersionUID=1l;
+    public static final long serialVersionUID=1l;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

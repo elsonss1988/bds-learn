@@ -7,7 +7,7 @@ import java.util.Objects;
 @Entity
 @Table(name="tb_role")
 public class Role implements Serializable {
-    public static final Long SerialVersionUID=1L;
+    public static final Long serialVersionUID=1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

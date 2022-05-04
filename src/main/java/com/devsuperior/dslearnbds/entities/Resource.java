@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Table(name="tb_resource")
 public class Resource implements Serializable {
-    private static final long SerialVersionUID=1l;
+    private static final long serialVersionUID=1l;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

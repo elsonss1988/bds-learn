@@ -9,13 +9,15 @@ import java.util.List;
 @Entity
 @Table(name="tb_offer")
 public class Offer implements Serializable {
-    public static final long SerialVersionUID=1l;
+    public static final long serialVersionUID=1l;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String edition;
+    @Column(columnDefinition="TIMESTAMP WITHOUT TIME ZONE")
     private Instant startMoment;
+    @Column(columnDefinition="TIMESTAMP WITHOUT TIME ZONE")
     private Instant endMoment;
 
     public Offer(){}

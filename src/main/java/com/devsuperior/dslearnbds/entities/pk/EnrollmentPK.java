@@ -11,7 +11,7 @@ import java.util.Objects;
 
 @Embeddable
 public class EnrollmentPK implements Serializable {
-    public static final long SerialVersionUID=1l;
+    public static final long serialVersionUID=1l;
 
     @ManyToOne
     @JoinColumn(name="user_id")
